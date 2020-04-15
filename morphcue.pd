@@ -1,0 +1,46 @@
+#N canvas 633 0 1902 1347 10;
+#X obj 311 31 r count;
+#X obj 219 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 311 53 sel 1;
+#X obj 290 77 gate;
+#X obj 290 250 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 290 276 == 0;
+#X obj 290 159 delay, f 15;
+#X obj 290 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 327 209 0;
+#X obj 327 183 loadbang;
+#X obj 219 31 inlet;
+#X obj 337 276 outlet;
+#X obj 290 299 outlet;
+#X obj 377 108 expr (60000 / $f1) * ($f2 * 4);
+#X obj 554 52 inlet;
+#X text 88 138 sends morphbang to trigger effect;
+#X text 414 52 bpm;
+#X obj 377 52 inlet;
+#X obj 395 158 s efftime;
+#X text 457 145 how long the effect needs to be turned on for the morph
+, f 22;
+#X text 592 45 sets how many measures the morph will take, f 22;
+#X text 128 31 triggers morph;
+#X obj 297 138 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 7 0 1 0;
+#X connect 7 0 22 0;
+#X connect 8 0 4 0;
+#X connect 9 0 8 0;
+#X connect 10 0 1 0;
+#X connect 13 0 6 1;
+#X connect 13 0 18 0;
+#X connect 14 0 13 1;
+#X connect 17 0 13 0;
